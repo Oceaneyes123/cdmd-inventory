@@ -132,9 +132,9 @@
                           <v-container>
                             <v-row class="justify-end">
                               <v-col cols="4 d-flex justify-end">
-                                <v-btn color="primary" class="mr-4" @click="openSaleDialog()" :disabled="selectedProducts.length == 1 ? false : true">New Sales</v-btn>
-                                <v-btn color="warning" class="mr-4" @click="isEdit = true, clickEdit()" :disabled="selectedProducts.length == 1 ? false : true">Edit</v-btn>
-                                <v-btn color="error"  @click="deleteProducts()" :disabled="selectedProducts.length < 1 ? true : false">Delete</v-btn>
+                                <v-btn color="primary" class="mr-4" @click="openSaleDialog()" v-if="selectedProducts.length == 1">New Sales</v-btn>
+                                <v-btn color="warning" class="mr-4" @click="isEdit = true, clickEdit()" v-if="selectedProducts.length == 1">Edit</v-btn>
+                                <v-btn color="error"  @click="deleteProducts()" v-if="selectedProducts.length >= 1">Delete</v-btn>
                               </v-col>
                             </v-row>
                           </v-container>
@@ -203,7 +203,7 @@
         <v-card class="px-4 py-4">
           <div class="text-h5 mb-4">New Sale</div>
           <div class="text-body-1 mt-3 font-weight-bold mb-2">Product</div>
-          <div class="text-h5 mb-4">{{ newSale.name }}</div>
+          <div class="text-h5 mb-4 text-blue-lighten-1 font-weight-black">{{ newSale.name }}</div>
           <div class="text-body-1 mt-3 font-weight-bold mb-2">Quantity</div>
           <div>
             <v-text-field v-model="newSale.quantity" type="number"/>          
