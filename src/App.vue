@@ -317,7 +317,6 @@
       /** 
       populateDatabase(){
         const input = document.getElementById('input')
-        console.log(input)
           readXlsxFile(input.files[0]).then((rows) => {
             rows.forEach((row) => {
               this.newProduct.name = row[0];
@@ -493,7 +492,6 @@
              net += this.sales[i].net_sale;
            }
         }
-        console.log({net, gross})
 
         this.summary.dailyGross = gross;
         this.summary.dailyNet = net;
