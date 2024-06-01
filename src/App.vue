@@ -227,7 +227,7 @@
     data(){
       return{
         name: 'CDMD Pharmacy',
-        apiURL: 'http://localhost:3001',
+        apiURL: 'https://cdmd-inventory.onrender.com',
         tab: 1,
         selectedProducts: [],
         selectedSales: [],
